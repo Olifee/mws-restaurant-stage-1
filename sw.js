@@ -1,5 +1,8 @@
 var staticCacheName = 'restaurant-static-v2';
 
+/**
+Cache all files when new Service Worker is installed
+*/
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache) {
@@ -27,7 +30,9 @@ self.addEventListener('install', function(event) {
   );
 });
 
-
+/**
+Delete old caches when new Service Worker is being activated
+*/
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -43,7 +48,9 @@ self.addEventListener('activate', function(event) {
   );
 });
 
-
+/**
+Fetch files from cache if available, else request file from server
+*/
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request, {ignoreSearch: true}).then(function(response) {

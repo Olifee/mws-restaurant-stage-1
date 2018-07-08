@@ -57,14 +57,21 @@ nav {
   width: 100%;
   height: 80px;
   background-color: #252831;
-  text-align:center;
-  display:flex;
   align-items: center;
   justify-content: center;
 
 }
+nav div {
+  height: inherit;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
 nav h1 {
   margin: auto;
+  text-align: center;
 }
 nav h1 a {
   color: #fff;
@@ -247,7 +254,7 @@ nav h1 a {
   min-height: 248px;
   min-width: 100%;
 }
-#restaurants-list li h1 {
+#restaurants-list li h2 {
   color: #f18200;
   font-family: Arial,sans-serif;
   font-size: 14pt;
