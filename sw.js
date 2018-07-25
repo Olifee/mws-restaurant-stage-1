@@ -1,4 +1,13 @@
-var staticCacheName = 'restaurant-static-v2';
+const staticCacheName = 'restaurant-static-v2';
+const databaseName = 'restaurants-database'
+const storeName = 'restaurants-store';
+
+const dbPromise = idb.open(databaseName, 1, upgradeDB => {
+  upgradeDB.createObjectStore(storeName, {
+    keyPath: 'id'
+  });
+});
+
 
 /**
 Cache all files when new Service Worker is installed
