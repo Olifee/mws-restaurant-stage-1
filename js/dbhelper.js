@@ -19,7 +19,6 @@ class DBHelper {
     fetch(`${DBHelper.DATABASE_URL}`)
     .then(response => response.json())
     .then(restaurants => {
-      console.log(restaurants);
       callback(null, restaurants);
     })
     .catch(error => callback(`Request failed. Returned status of ${error.statusText}`, null));
@@ -142,8 +141,11 @@ class DBHelper {
 
   /**
    * Restaurant image URL.
-   */∏
+   */
   static imageUrlForRestaurant(restaurant) {
+    if (!restaurant.photograph) {
+      return (`/img/notavailable.png`);
+    }
     return (`/img/${restaurant.photograph}.jpg`);
   }
 
