@@ -59,7 +59,6 @@ nav {
   background-color: #252831;
   align-items: center;
   justify-content: center;
-
 }
 nav div {
   height: inherit;
@@ -182,6 +181,10 @@ nav h1 a {
   height: 35px;
   letter-spacing: 0;
   padding: 0 10px;
+}
+
+label {
+  display: none;
 }
 
 /* Extra small devices (phones, 600px and down) */

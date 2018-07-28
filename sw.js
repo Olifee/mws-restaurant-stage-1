@@ -1,6 +1,6 @@
 self.importScripts('js/idb.js');
 
-const staticCacheName = 'restaurant-static-v3';
+const staticCacheName = 'restaurant-static-v4';
 const databaseName = 'restaurants'
 const storeName = 'restaurants-store';
 
@@ -80,7 +80,6 @@ self.addEventListener('fetch', function(event) {
       var store = tx.objectStore(storeName);
       return store.getAll();
     }).then(data => {
-      console.log(data)
       if (data.length > 0) {
         return data 
       }
